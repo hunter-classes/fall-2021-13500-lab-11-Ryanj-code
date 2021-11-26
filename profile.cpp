@@ -16,10 +16,10 @@ std::string Profile::getUsername(){
   return username;
 }
 
-std::string Profile::getDisplayname(){
+std::string Profile::getFullName(){
   return displayname + " (@" + username + ")"; 
 }
 
-void Profile::setDisplayname(std::string dspn){
+void Profile::setDisplayName(std::string dspn){
   displayname = dspn;
 }
