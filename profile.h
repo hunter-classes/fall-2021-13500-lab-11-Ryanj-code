@@ -1,3 +1,11 @@
+/*
+Author: Ryan Jiang
+Course: CSCI-135
+Instructor: Tong Yi and Mike Zamansky
+Assignment: Lab 11
+This is the header file for the declarations in the profile class.
+*/
+
 #pragma once
 #include <string>
 

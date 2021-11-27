@@ -1,6 +1,15 @@
+/*
+Author: Ryan Jiang
+Course: CSCI-135
+Instructor: Tong Yi and Mike Zamansky
+Assignment: Lab 11
+This contains some tests for the functions of the profile and network class.
+*/
+
 #include <iostream>
 #include "profile.h"
 #include "network.h"
+using namespace std;
 
 int main(){
     std::cout<<"Task A: \n";

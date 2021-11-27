@@ -1,3 +1,11 @@
+/*
+Author: Ryan Jiang
+Course: CSCI-135
+Instructor: Tong Yi and Mike Zamansky
+Assignment: Lab 11
+This is the file with the implementations for the network class.
+*/
+
 #include <iostream>
 #include <string>
 #include "profile.h"

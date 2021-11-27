@@ -1,11 +1,19 @@
+/*
+Author: Ryan Jiang
+Course: CSCI-135
+Instructor: Tong Yi and Mike Zamansky
+Assignment: Lab 11
+This contains the tests for the functions in the profile and network class.
+*/
+
 #define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
 #define CHECK DOCTEST_CHECK
 #include "doctest.h"
 #include "profile.h"
 #include "network.h"
+using namespace std;
 
-TEST_CASE("Task A:")
-{
+TEST_CASE("Task A:"){
     Profile p1("marco", "Marco");
     CHECK(p1.getUsername() == "marco");
     CHECK(p1.getFullName() == "Marco (@marco)");
@@ -20,18 +28,18 @@ TEST_CASE("Task A:")
     CHECK(p3.getFullName() == "Ryan Jiang (@Ryj21)");
 }
 
-TEST_CASE("Task B:")
-{
+TEST_CASE("Task B:"){
     Network nw;
     CHECK(nw.addUser("mario", "Mario") == true);
     CHECK(nw.addUser("luigi", "Luigi") == true);
     CHECK(nw.addUser("mario", "Mario2") == false);
     CHECK(nw.addUser("mario 2", "Mario2") == false);
     CHECK(nw.addUser("mario-2", "Mario2") == false);
-    for(int i = 2; i < 20; i++)
-    {
+
+    for(int i = 2; i < 20; i++){
         CHECK(nw.addUser("mario" + to_string(i), "Mario" + to_string(i)) == true);
     }
+ 
     CHECK(nw.addUser("yoshi", "Yoshi") == false);
     
     Network nw2;
@@ -42,8 +50,7 @@ TEST_CASE("Task B:")
     CHECK(nw2.addUser("dave-2", "Dave2") == false);
 }
 
-TEST_CASE("Task C:")
-{
+TEST_CASE("Task C:"){
     Network nw1 = Network();
     nw1.addUser("mario", "Mario");
     nw1.addUser("luigi", "Luigi");
@@ -62,5 +69,5 @@ TEST_CASE("Task C:")
     CHECK(nw2.follow("luke", "dave") == true);
     CHECK(nw2.follow("luke", "jason") == true);
     CHECK(nw2.follow("luke", "dave") == true);
-    CHECK(nw2.follow("michael", "michael") == false)
+    CHECK(nw2.follow("michael", "michael") == false);
 }
