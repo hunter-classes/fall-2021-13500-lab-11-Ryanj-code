@@ -2,9 +2,7 @@
 #include "profile.h"
 #include "network.h"
 
-int main()
-{
-
+int main(){
     std::cout<<"Task A: \n";
     Profile p1("marco", "Marco");    
     std::cout << p1.getUsername() << std::endl; // marco
@@ -20,18 +18,20 @@ int main()
 
     std::cout<<"Task B: \n";
     Network nw;
-    cout << nw.addUser("mario", "Mario") << endl;     // true (1)
-    cout << nw.addUser("luigi", "Luigi") << endl;     // true (1)
+    std::cout << nw.addUser("mario", "Mario") << std::endl;     // true (1)
+    std::cout << nw.addUser("luigi", "Luigi") << std::endl;     // true (1)
 
-    cout << nw.addUser("mario", "Mario2") << endl;    // false (0)
-    cout << nw.addUser("mario 2", "Mario2") << endl;  // false (0)
-    cout << nw.addUser("mario-2", "Mario2") << endl;  // false (0)
+    std::cout << nw.addUser("mario", "Mario2") << std::endl;    // false (0)
+    std::cout << nw.addUser("mario 2", "Mario2") << std::endl;  // false (0)
+    std::cout << nw.addUser("mario-2", "Mario2") << std::endl;  // false (0)
 
+    
     for(int i = 2; i < 20; i++)
-        cout << nw.addUser("mario" + to_string(i), 
-                    "Mario" + to_string(i)) << endl;   // true (1)
+        std::cout << nw.addUser("mario" + to_string(i), 
+                    "Mario" + to_string(i)) << std::endl;   // true (1)
 
-    cout << nw.addUser("yoshi", "Yoshi") << endl;
+    std::cout << nw.addUser("yoshi", "Yoshi") << std::endl;
+    
 
     std::cout<<"Task C: \n";
     Network nw1;
@@ -48,10 +48,6 @@ int main()
     nw1.follow("yoshi", "mario");
     nw1.follow("yoshi", "luigi");
 
-    // cout<<nw1.isFollowing("mario", "yoshi")<<"\n";
-    // cout<<nw1.isFollowing("yoshi", "yoshi")<<"\n";
-    // cout<<nw1.isFollowing("yoshi", "mario")<<"\n";
-    // cout<<nw1.isFollowing("mario", "luigi")<<"\n";
     nw1.printDot();
     return 0;
 }

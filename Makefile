@@ -5,7 +5,7 @@ tests: tests.o profile.o network.o
 	g++ -o tests tests.o profile.o network.o
 
 main.o: main.cpp profile.h network.h
-	g++ -c main.cpp
+	g++ -c main.cpp -std=c++11
 
 tests.o: tests.cpp doctest.h profile.h network.h
 	g++ -c tests.cpp -std=c++11
