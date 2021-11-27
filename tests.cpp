@@ -48,6 +48,7 @@ TEST_CASE("Task B:"){
     CHECK(nw2.addUser("dave", "Davey") == false);
     CHECK(nw2.addUser("luke 2", "Luke2") == false);
     CHECK(nw2.addUser("dave-2", "Dave2") == false);
+    CHECK(nw2.addUser("", "") == false);
 }
 
 TEST_CASE("Task C:"){
