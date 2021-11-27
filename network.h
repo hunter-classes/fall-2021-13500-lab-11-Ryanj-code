@@ -19,7 +19,7 @@ public:
   // Attempts to sign up a new user with specified username and displayname
   // return true if the operation was successful, otherwise return false
   bool addUser(std::string usrn, std::string dspn);
-   // Make 'usrn1' follow 'usrn2' (if both usernames are in the network).
+  // Make 'usrn1' follow 'usrn2' (if both usernames are in the network).
   // return true if success (if both usernames exist), otherwise return false
   bool follow(std::string usrn1, std::string usrn2);
   // Print Dot file (graphical representation of the network)
