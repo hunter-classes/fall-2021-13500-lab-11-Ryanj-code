@@ -3,7 +3,6 @@
 #include "doctest.h"
 #include "profile.h"
 #include "network.h"
-using namespace std;
 
 TEST_CASE("Task A:")
 {
@@ -34,6 +33,13 @@ TEST_CASE("Task B:")
         CHECK(nw.addUser("mario" + to_string(i), "Mario" + to_string(i)) == true);
     }
     CHECK(nw.addUser("yoshi", "Yoshi") == false);
+    
+    Network nw2;
+    CHECK(nw2.addUser("luke", "Luke") == true);
+    CHECK(nw2.addUser("dave", "Dave") == true);
+    CHECK(nw2.addUser("dave", "Davey") == false);
+    CHECK(nw2.addUser("luke 2", "Luke2") == false);
+    CHECK(nw2.addUser("dave-2", "Dave2") == false);
 }
 
 TEST_CASE("Task C:")
@@ -47,4 +53,14 @@ TEST_CASE("Task C:")
     CHECK(nw1.follow("mario", "wario") == true);
     CHECK(nw1.follow("mario", "wario") == true);
     CHECK(nw1.follow("mario", "mario") == false);
+
+    Network nw2 = Network();
+    nw2.addUser("luke", "Luke");
+    nw2.addUser("dave", "Dave");
+    nw2.addUser("jason", "Jason");
+    nw2.addUser("michael", "Michael");
+    CHECK(nw2.follow("luke", "dave") == true);
+    CHECK(nw2.follow("luke", "jason") == true);
+    CHECK(nw2.follow("luke", "dave") == true);
+    CHECK(nw2.follow("michael", "michael") == false)
 }
